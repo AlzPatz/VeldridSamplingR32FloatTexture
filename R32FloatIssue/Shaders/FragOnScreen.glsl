@@ -15,11 +15,11 @@ void main(void)
 
     if(sampledValue > 0)
     {
-        b = sampledValue;
+        b = 1.0;
     }
     else
     {
-        g = -sampledValue;
+        g = 1.0;
     }
 
     fragColor = vec4(0.0, g, b, 1.0);
