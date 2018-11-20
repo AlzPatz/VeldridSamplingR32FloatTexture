@@ -93,7 +93,7 @@ namespace EffectDemo
 
             var framebuffer = _factory.CreateFramebuffer(new FramebufferDescription(null, texture));
 
-            var sampler = _factory.CreateSampler(new SamplerDescription(SamplerAddressMode.Clamp, SamplerAddressMode.Clamp, SamplerAddressMode.Clamp, SamplerFilter.Anisotropic, null, 4, 0, 0, 0, SamplerBorderColor.TransparentBlack));
+            var sampler = _factory.CreateSampler(new SamplerDescription(SamplerAddressMode.Clamp, SamplerAddressMode.Clamp, SamplerAddressMode.Clamp, SamplerFilter.MinPoint_MagPoint_MipPoint, null, 4, 0, 0, 0, SamplerBorderColor.TransparentBlack));
 
             var textureResourceLayout = _factory.CreateResourceLayout(
                 new ResourceLayoutDescription(
