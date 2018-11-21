@@ -59,7 +59,7 @@ namespace EffectDemo
 
             var pipelineDescription = new GraphicsPipelineDescription()
             {
-                BlendState = BlendStateDescription.SingleAlphaBlend,
+                BlendState = BlendStateDescription.SingleOverrideBlend,
                 DepthStencilState = new DepthStencilStateDescription(
                     depthTestEnabled: false, 
                     depthWriteEnabled: false,
@@ -93,7 +93,7 @@ namespace EffectDemo
 
             var framebuffer = _factory.CreateFramebuffer(new FramebufferDescription(null, texture));
 
-            var sampler = _factory.CreateSampler(new SamplerDescription(SamplerAddressMode.Clamp, SamplerAddressMode.Clamp, SamplerAddressMode.Clamp, SamplerFilter.MinPoint_MagPoint_MipPoint, null, 4, 0, 0, 0, SamplerBorderColor.TransparentBlack));
+            var sampler = _factory.CreateSampler(new SamplerDescription(SamplerAddressMode.Mirror, SamplerAddressMode.Mirror, SamplerAddressMode.Mirror, SamplerFilter.MinPoint_MagPoint_MipPoint, null, 4, 0, 0, 0, SamplerBorderColor.OpaqueBlack));
 
             var textureResourceLayout = _factory.CreateResourceLayout(
                 new ResourceLayoutDescription(
